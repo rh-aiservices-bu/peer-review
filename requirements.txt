@@ -1,0 +1,17 @@
+Flask
+gunicorn
+jupyter
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+xgboost
+kaggle
+opendatasets
+requests
+ipyplot
+scikit-image
+nbformat
+nbconvert
+inquirer

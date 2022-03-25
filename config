@@ -1,0 +1,13 @@
+[Path]
+data: data/
+notebooks: notebooks/
+models: models/
+
+[Data]
+raw: ${Path:data}raw/dataSepsis.csv
+in: ${Path:data}in/new_data.csv
+out: ${Path:data}out/
+transform: ${Path:data}transform/
+
+[Run]
+version: 0

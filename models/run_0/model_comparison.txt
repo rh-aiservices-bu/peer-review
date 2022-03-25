@@ -1,0 +1,5 @@
+                             Estimator score method  Scoring parameter                     Metric functions
+-------------------------  ------------------------  ----------------------------------  ------------------
+Support Vector Classifier                  0.95122   [0.76258591 0.70292208 0.73262776]            0.695312
+Random Forest Classifier                   1         [0.7542311  0.74580452 0.80199022]            1
+Logistic Regression                        0.945591  [0.7584622  0.76104739 0.78158205]            0.656126

@@ -2,12 +2,16 @@
 data: data/
 notebooks: notebooks/
 models: models/
+experiments: experiments/
 
 [Data]
-raw: ${Path:data}raw/dataSepsis.csv
-in: ${Path:data}in/new_data.csv
-out: ${Path:data}out/
-transform: ${Path:data}transform/
+input: ${Path:data}input/dataSepsis.csv
+inference: ${Path:data}inference/new_data.csv
+train-test: ${Path:data}train-test/
+
+[Model]
+trained: ${Path:models}trained/
+tuned: ${Path:models}tuned/
 
 [Run]
 version: 0

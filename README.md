@@ -1,42 +1,48 @@
 Peer-review
 ==============================
 
-A structured project with data, notebook, models and workflow to allow scientists to consistently replicate experiments.
+A structured project with data, notebook, models and workflow to allow scientists to consistently replicate experiments. A typical data science experiment includes exploring data, building features (also called feature engineering), training multiple models inorder to compare and select one, optimizing the trained model through hyperparameter tuning and finally running prediction on new data (model inference). The notebooks have been named and numbered to easily identify the order in the workflow.
 
 ## Project Organization
 ```
 README.md
 LICENSE
 config                          <- store path, data, model and run related configurations
+
 data                            <- folder for training and test dataset
    └── input                    <- raw input data
    └── train-test               <- transformed input data for training and testing
    └── inference                <- data for inference
+
 models                          <- folder to store ml models
    └── trained                  <- subfolder to store trained ml models
    └── tuned                    <- subfolder to store tuned ml models
+
 notebooks                       <- folder for various notebooks
    └── 01-explore-data.ipynb    <- explore and visualize data
    └── 02-build-features.ipynb  <- clean and transform data for training and testing
    └── 03-train-model.ipynb     <- train multiple models and compare them
    └── 04-tune-model.ipynb      <- optimize ml model through hyperparameter tuning
    └── 05-model-inference.ipynb <- run prediction on new data
+
 experiments                     <- folder to store artifacts from various runs
-   └── experiment_0             <- replicate experiment and store results in similar 
-       └── data                    directory structure for data and models.
-           └── trained             (similar structure created for each run)  
-           └── tuned  
+   └── experiment_0             <- folder to store results for each run.
+           └── plots            <- contains plots from explore data notebook
+           └── train-test       <- train and test data from build features notebook    
        └── models
-           └── trained
-           └── tuned           
-       └── prediction results   
+           └── trained          <- trained models from train model notebook
+           └── tuned            <- optimized model from tune model notebook
+       └── prediction results   <- prediction results from model inference notebook
+
 prediction.py                   <- the predict function called from Flask
 wsgi.py                         <- basic Flask application
 flask_run.ipynb                 <- run Flask application on localhost
 flask_test.ipynb                <- test Flask application on localhost
 Dockerfile                      <- Docker configuration to create containers
+
 requirements.txt                <- List of all required packages
 lib                             <- library routines to read configuration details
+
 .gitignore                      <- standard python gitignore
 .s2i                            <- hidden folder for advanced s2i configuration
    └── environment              <- s2i environment settings
@@ -90,15 +96,32 @@ Once cloned, you should be able to see the contents of the peer-review repo as b
 
 ## Experiment replication using RedHat OpenShift Data Science
 
-This repository is structured in a way to serve as guidance in packaging data, notebooks, models, etc., such that it is easier to replicate the experiments or workflow (combination of notebook, models and results) once published. 
+This repository is structured in a way to serve as guidance in packaging data, notebooks, models, etc., such that it is easier to replicate the experiments or workflow (combination of notebook, models and results) once published.
 
-1. First step in the workflow is to configure the oath, model, data, and run information in config file. Prior to the each replication or run, users need to update the version number under [Run] section in Config. This allows results from the following run to be recorded under experiments folder in their respective versioned folder. For example, version 1 of the run would be recorded under experiments/experiment_1.
+### Review/Rerun published notebooks
+
+1. First step in the workflow is to configure the path, model, data, and run information in config file. Prior to the each replication or run, users need to update the version number under [Run] section in Config. This allows results from the following run to be recorded under experiments folder in their respective versioned folder. For example, version 1 of the run would be recorded under experiments/experiment_1.
 
 ![image](https://user-images.githubusercontent.com/16919509/160679472-3e6a866c-ddfd-44d3-a97f-e5b811e0930c.png)
 
 Note that the other parameters in Config file can be left as is for now. To start with, we are attempting to rerun the notebooks with the default data, i.e., data used by the author while publishing the experiment. In the later steps, we will show how users can point a run to custom data.
 
+2. Users can review as well as rerun the notebooks in the typical order of the data science workflow. Users can either execute all the cells in a notebook (using the option 'Run all cells' from the drop down menu 'Run') or walk through and execute each cell using the play button ('Run the selected cells and advance')
 
+![image](https://user-images.githubusercontent.com/16919509/160708585-4e107aa4-4ffc-424e-8b57-ff23d1fd9394.png)
+
+![image](https://user-images.githubusercontent.com/16919509/160709579-73f68a55-f31b-4bde-a06c-0398fdeba361.png)
+
+3. Repeat Step 2 for all the 5 notebooks. The following artifacts are stored at the end of each notebook,
+      experiments                   
+       └── experiment_1             <- assuming user sets version in config to 1 
+           └── data                    
+               └── plots            <- 01-explore-data.ipynb
+               └── train-test       <- 02-build-features.ipynb
+           └── models
+               └── trained          <- 03-train-model.ipynb
+               └── tuned            <- 04-tune-model.ipynb
+           └── prediction results   <- 05-model-inference.ipynb
 
 ## Data Science Workflow
 

@@ -36,6 +36,7 @@ flask_run.ipynb                 <- run Flask application on localhost
 flask_test.ipynb                <- test Flask application on localhost
 Dockerfile                      <- Docker configuration to create containers
 requirements.txt                <- List of all required packages
+lib                             <- library routines to read configuration details
 .gitignore                      <- standard python gitignore
 .s2i                            <- hidden folder for advanced s2i configuration
    └── environment              <- s2i environment settings

@@ -6,6 +6,7 @@ COPY requirements.txt ./requirements.txt
 COPY data data/
 COPY models models/
 COPY notebooks notebooks/
+COPY experiments experiments/
 COPY config config
 COPY lib lib/
 

@@ -113,6 +113,7 @@ Note that the other parameters in Config file can be left as is for now. To star
 ![image](https://user-images.githubusercontent.com/16919509/160709579-73f68a55-f31b-4bde-a06c-0398fdeba361.png)
 
 3. Repeat Step 2 for all the 5 notebooks. The following artifacts are stored at the end of each notebook,
+4. ```
       experiments                   
        └── experiment_1             <- assuming user sets version in config to 1 
            └── data                    
@@ -123,5 +124,59 @@ Note that the other parameters in Config file can be left as is for now. To star
                └── tuned            <- 04-tune-model.ipynb
            └── prediction results   <- 05-model-inference.ipynb
 
-## Data Science Workflow
+--------
+
+For example, after executing all the notebooks, you will see the following files populated under experiments/experiments_1. This is helpful when performing multiple runs of the experiments and comparing results with published version. 
+
+![image](https://user-images.githubusercontent.com/16919509/160889308-3361d9ed-a445-4222-b0f2-5b5e97b9efed.png)
+
+
+### Rerun published notebooks with custom data
+
+Replicating the experiments with custom data is super easy. Upload your new data and update the config to point to your data. For example, assume user uploads my_input.csv to data/input folder. Update the config file (value for 'input' in Section [Data] and the version for the current run) as shown below. 
+
+![image](https://user-images.githubusercontent.com/16919509/160914615-101d04df-c494-449c-a760-6064099e103a.png)
+
+Then rerun all the notebooks. You should observe that the results are stored in experiments/experiment_2 folder.
+
+![image](https://user-images.githubusercontent.com/16919509/160915210-23fd0461-6116-4b10-a6f2-e7750095386c.png)
+
+Now you can compare your results against the published version/your rerun of the published version. For example, the screenshot below shows comparison of the trained models from both runs
+
+![image](https://user-images.githubusercontent.com/16919509/160915944-31e90145-237b-4123-850f-412946937209.png)
+
+## Serving the model in OpenShift
+
+To serve the model in OpenShift, you need to
+```
+ 1. Wrap the model inference code in to prediction function            <- prediction.py
+ 2. Build a Flask application to serve the prediction function         <- wsgi.py
+     └── Run and test the Flask application locally before deploying   <- flask_run.ipynb and flask_test.ipynb
+         it to OpenShift
+ 3. Create Dockerfile to containerize everything - Flask application,  <- Dockerfile
+    prediction code, model and dependencies.
+ 4. Deploy container to OpenShift and run prediction via REST API
+```
+
+All the above are provided with the repository. Some things to note,
+- the prediction function is simply the 05-model-inference.ipynb notebook in the form of a function.
+- Flask application allows you to create a web application that serves the user input into the prediction function and return back the result.
+- Dockerfile copies all the necessary files including the saved model, as well as includes commands to install all necessary packages
+
+## Deploying container in OpenShift
+
+1. On the Red Hat OpenShift Data Science page, click on the Rubik cube icon to list the Red Hat Applications and click on OpenShift console
+
+![image](https://user-images.githubusercontent.com/16919509/160920544-8d022fc7-32fc-469b-a88f-44e7d931c802.png)
+
+2. Once you are inside the OpenShift console, Click on 'Topology '. Right click on the right panel to bring up 'Add to Project'. Then select 'Import from Git'
+
+![image](https://user-images.githubusercontent.com/16919509/160922150-88cfed00-e2ba-48a2-9f50-982c447f75b1.png)
+
+3. Enter the Git repo URL https://github.com/rh-aiservices-bu/peer-review.git and click 'Create'
+
+![image](https://user-images.githubusercontent.com/16919509/160921881-95510890-ab0e-411e-9f1a-38b9b9c29add.png)
+
+
+
 

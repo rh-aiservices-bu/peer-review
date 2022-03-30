@@ -6,7 +6,6 @@ COPY requirements.txt ./requirements.txt
 COPY data data/
 COPY models models/
 COPY notebooks notebooks/
-COPY run.py ./run.py
 COPY config config
 COPY lib lib/
 RUN chmod 777 reports

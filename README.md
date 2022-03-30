@@ -179,5 +179,11 @@ All the above are provided with the repository. Some things to note,
 
 ![image](https://user-images.githubusercontent.com/16919509/160927164-e5602481-d065-49e1-a733-73f257e2f6e3.png)
 
+4. Wait for the Build to complete and Pod ready. Once the pod is ready, you can see a route available to access this application
+
+![image](https://user-images.githubusercontent.com/16919509/160929226-d9953395-977e-4867-9e5e-6eba53ca2064.png)
+
+![image](https://user-images.githubusercontent.com/16919509/160929503-99d85b5c-efec-4701-8f1a-21fcd6e01294.png)
+
 
 

@@ -16,6 +16,7 @@ class getConfig():
 
         # Prepare data directory for current run
         self.experiments_path = path + settings.get('Path', 'experiments') + "experiment_" + self.version + "/" 
+        self.plots_path = self.experiments_path + settings.get('Data', 'plots')
         self.traintest_path = self.experiments_path + settings.get('Data', 'train-test')
         self.trained_path = self.experiments_path + settings.get('Model', 'trained')
         self.tuned_path = self.experiments_path + settings.get('Model', 'tuned')

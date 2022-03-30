@@ -5,6 +5,7 @@ models: models/
 experiments: experiments/
 
 [Data]
+plots: ${Path:data}plots/
 input: ${Path:data}input/dataSepsis.csv
 inference: ${Path:data}inference/new_data.csv
 train-test: ${Path:data}train-test/

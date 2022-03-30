@@ -183,10 +183,12 @@ All the above are provided with the repository. Some things to note,
 
 ![image](https://user-images.githubusercontent.com/16919509/160929226-d9953395-977e-4867-9e5e-6eba53ca2064.png)
 
-![image](https://user-images.githubusercontent.com/16919509/160929503-99d85b5c-efec-4701-8f1a-21fcd6e01294.png)
-
 
 5. Test the application using the curl command from flask_test.ipynb but use the route copied from above
+
+![image](https://user-images.githubusercontent.com/16919509/160929503-99d85b5c-efec-4701-8f1a-21fcd6e01294.png)
+
+![image](https://user-images.githubusercontent.com/16919509/160931637-3ba763ed-0a1b-4347-a421-db41ee0f2cdb.png)
 
 ![image](https://user-images.githubusercontent.com/16919509/160930960-f3e7dcae-4484-48d1-967c-c6b5389cc75e.png)
 

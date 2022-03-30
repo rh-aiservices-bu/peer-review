@@ -8,7 +8,6 @@ COPY models models/
 COPY notebooks notebooks/
 COPY config config
 COPY lib lib/
-RUN chmod 777 reports
 
 RUN pip install -r requirements.txt
 

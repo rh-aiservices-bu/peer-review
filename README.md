@@ -186,4 +186,13 @@ All the above are provided with the repository. Some things to note,
 ![image](https://user-images.githubusercontent.com/16919509/160929503-99d85b5c-efec-4701-8f1a-21fcd6e01294.png)
 
 
+5. Test the application using the curl command from flask_test.ipynb but use the route copied from above
 
+![image](https://user-images.githubusercontent.com/16919509/160930960-f3e7dcae-4484-48d1-967c-c6b5389cc75e.png)
+
+ or paste the curl command in the terminal to get the prediction for sample data,
+```
+[1002700000@jupyterhub-nb-panbalag experiments]$ curl -X POST -H "Content-Type: application/json" --data '{"HR": 103, "O2Sat": 90, "Temp": null, "SBP": null, "MAP": null, "DBP": null, "Resp": 30, "EtCO2": null, "BaseExcess": 21, "HCO3": 45, "FiO2": null, "pH": 7.37, "PaCO2": 90, "SaO2": 91, "AST": 16, "BUN": 14, "Alkalinephos": 98, "Calcium": 9.3, "Chloride": 85, "Creatinine": 0.7, "Glucose": 193, "Lactate": null, "Magnesium": 2, "Phosphate": 3.3, "Potassium": 3.8, "Bilirubin_total": 0.3, "Hct": 37.2, "Hgb": 12.5, "PTT": null, "WBC": 5.7, "Fibrinogen": null, "Platelets": 317}' http://peer-review-panbalag-dev.apps.rhods-sb-prod.3sox.p1.openshiftapps.com/predictions
+{
+  "prediction": "No Sepsis"
+} 

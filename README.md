@@ -175,8 +175,9 @@ All the above are provided with the repository. Some things to note,
 
 3. Enter the Git repo URL https://github.com/rh-aiservices-bu/peer-review.git and click 'Create'
 
-![image](https://user-images.githubusercontent.com/16919509/160921881-95510890-ab0e-411e-9f1a-38b9b9c29add.png)
+![image](https://user-images.githubusercontent.com/16919509/160927026-8e53b9cc-035e-43d5-b691-a30d0df485be.png)
 
+![image](https://user-images.githubusercontent.com/16919509/160927164-e5602481-d065-49e1-a733-73f257e2f6e3.png)
 
 
 

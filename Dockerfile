@@ -10,6 +10,8 @@ COPY experiments experiments/
 COPY config config
 COPY lib lib/
 
+RUN chown 1001 experiments
+
 RUN pip install -r requirements.txt
 
 COPY wsgi.py ./wsgi.py
@@ -18,3 +20,5 @@ COPY prediction.py ./prediction.py
 EXPOSE 8080
 
 CMD ["python3", "wsgi.py", "8080"]
+
+

@@ -1,7 +1,7 @@
 Peer-review
 ==============================
 
-A structured project with data, notebook, models and workflow to allow scientists to consistently replicate experiments. A typical data science experiment includes exploring data, building features (also called feature engineering), training multiple models inorder to compare and select one, optimizing the trained model through hyperparameter tuning and finally running prediction on new data (model inference). The notebooks have been named and numbered to easily identify the order in the workflow.
+A structured project with data, notebooks, models and workflow to allow scientists to consistently replicate experiments. A typical data science experiment includes exploring data, building features (also called feature engineering), training multiple models inorder to compare and select one, optimizing the trained model through hyperparameter tuning and finally running prediction on new data (model inference). The notebooks have been named and numbered to easily identify the order in the workflow.
 
 ## Project Organization
 ```

@@ -8,6 +8,7 @@ A structured project with data, notebooks, models and workflow to allow scientis
 README.md
 LICENSE
 config                          <- store path, data, model and run related configurations
+run.py                          <- custom script to run notebooks via command line
 
 data                            <- folder for training and test dataset
    └── input                    <- raw input data
@@ -32,7 +33,9 @@ experiments                     <- folder to store artifacts from various runs
        └── models
            └── trained          <- trained models from train model notebook
            └── tuned            <- optimized model from tune model notebook
+       └── notebooks            <- folder to save executed notebooks
        └── prediction results   <- prediction results from model inference notebook
+       
 
 prediction.py                   <- the predict function called from Flask
 wsgi.py                         <- basic Flask application
@@ -144,6 +147,25 @@ Then rerun all the notebooks. You should observe that the results are stored in 
 Now you can compare your results against the published version/your rerun of the published version. For example, the screenshot below shows comparison of the trained models from both runs
 
 ![image](https://user-images.githubusercontent.com/16919509/160915944-31e90145-237b-4123-850f-412946937209.png)
+
+### Running notebooks in command line
+
+The script 'run.py' can be used to execute the notebooks command line. This script provides the options to execute notebooks individually or all at once.
+
+![image](https://user-images.githubusercontent.com/16919509/161147292-31bb6104-6a99-4237-ad9c-90aafe2e8c0f.png)
+
+A sample execution is shown below. First, edit the config file to record a new version of the run
+
+![image](https://user-images.githubusercontent.com/16919509/161147444-c612ed59-4559-42e4-8708-eebae6f8633e.png)
+
+Execute 'run.py' and select the option 'all'. Notebooks get executed in the order defined in the script.
+
+![image](https://user-images.githubusercontent.com/16919509/161147696-eb3e161c-d8e7-4bf2-989a-6b06940f52e3.png)
+
+After run.py completes, the results can be found under experiements/experiments_3 folder
+
+![image](https://user-images.githubusercontent.com/16919509/161147858-d2d642d7-9bda-4625-856a-e967b723d701.png)
+
 
 ## Serving the model in OpenShift
 

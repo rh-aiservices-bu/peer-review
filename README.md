@@ -150,7 +150,7 @@ Now you can compare your results against the published version/your rerun of the
 
 ### Running notebooks in command line
 
-The script 'run.py' can be used to execute the notebooks command line. This script provides the options to execute notebooks individually or all at once.
+The script 'run.py' can be used to execute the notebooks command line. This script provides the options to execute notebooks individually or all at once. Use the up or down arrow to make your selection.
 
 ![image](https://user-images.githubusercontent.com/16919509/161147292-31bb6104-6a99-4237-ad9c-90aafe2e8c0f.png)
 

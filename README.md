@@ -56,7 +56,7 @@ gunicorn_config.py              <- configuration for gunicorn when run in OpenSh
 ## Steps
 1. Log into OpenShift Cluster and click on the Red Hat Applications (Rubik cube like icon). Under OpenShift Managed Services, click Red Hat OpenShift Data Science. If you are trying out OpenShift Data Science in the sandbox from https://developers.redhat.com/products/red-hat-openshift-data-science/overview, please skip to Step 2
 
-![image](https://user-images.githubusercontent.com/16919509/160602298-da6f09ce-2401-4b47-a38e-52c31a286d97.png | width=100)
+![image](https://user-images.githubusercontent.com/16919509/160602298-da6f09ce-2401-4b47-a38e-52c31a286d97.png)
 
 2. You will see the following screen open in a separate tab.
 
